@@ -1,5 +1,6 @@
 .sidenav {
   position: fixed;
+  z-index: 1;
   background-color: #363737;
   display: inline-block;
   .nav-link {

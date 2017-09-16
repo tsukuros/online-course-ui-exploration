@@ -10,10 +10,10 @@ var gulp    = require('gulp'),
 gulp.task('squish-plugins', function() {
     gulp.src('js/plugins/**/*.js')
         .pipe(plugins.concat('plugins.js'))
-        .pipe(gulp.dest('public/js'))
+        .pipe(gulp.dest('public/assets/js'))
         .pipe(plugins.uglify())
         .pipe(plugins.concat('plugins.min.js'))
-        .pipe(gulp.dest('public/js'))
+        .pipe(gulp.dest('public/assets/js'))
         .pipe(browserSync.stream());
 });
 
@@ -21,7 +21,7 @@ gulp.task('squish-plugins', function() {
 
 // Minify Custom JS: Run manually with: "gulp build-js"
 gulp.task('build-js', function() {
-    gulp.src('js/scripts/**/*.js')
+    gulp.src('js/scripts/*.js')
         .pipe(plugins.plumber())
         .pipe(plugins.jshint())
         .pipe(plugins.jshint.reporter('jshint-stylish'))
@@ -30,10 +30,10 @@ gulp.task('build-js', function() {
             this.emit('end');
         })
         .pipe(plugins.concat('scripts.js'))
-        .pipe(gulp.dest('public/js'))
+        .pipe(gulp.dest('public/assets/js'))
         .pipe(plugins.uglify())
         .pipe(plugins.concat('scripts.min.js'))
-        .pipe(gulp.dest('public/js'))
+        .pipe(gulp.dest('public/assets/js'))
         .pipe(browserSync.stream());
 });
 
@@ -79,8 +79,8 @@ gulp.task('serve', function() {
     });
 
     gulp.watch("scss/**/*.scss", ['build-scss']);
-    gulp.watch("js/scripts/**/*.js", ['build-js']);
-    gulp.watch("js/plugins/**/*.js", ['squish-plugins']);
+    gulp.watch("js/scripts/*.js", ['build-js']);
+    gulp.watch("js/plugins/*.js", ['squish-plugins']);
 
     gulp.watch("public/*.html").on('change', browserSync.reload);
 

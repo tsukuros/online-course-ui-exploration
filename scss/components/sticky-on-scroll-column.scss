@@ -1,0 +1,32 @@
+.blurred-img {
+  filter: blur(13px);
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+#hero-video {
+  &.in {
+    position: fixed;
+    z-index: 1;
+  }
+}
