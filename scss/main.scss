@@ -1,9 +1,13 @@
-@import '../bower_components/bootstrap/scss/bootstrap';
-@import '../bower_components/font-awesome/scss/font-awesome';
+@import './bootstrap/bootstrap';
 @import './components/sidenav';
 @import './components/sticky-on-scroll-column';
+@import './utilities/index';
+@import './pages/home';
 
 body {
   min-height: 75rem;
-  padding-top: 3.4rem;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  font-size: 14px;
+  color: #353640;
 }

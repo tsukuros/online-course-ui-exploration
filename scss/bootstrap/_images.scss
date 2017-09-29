@@ -9,6 +9,11 @@
   @include img-fluid;
 }
 
+.img-cover {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 // Image thumbnails
 .img-thumbnail {

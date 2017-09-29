@@ -4,39 +4,67 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <meta name="author" content="Oleksandr Tsukur - https://tsukuros.com, Roya Rakhshan - http://www.royarakhshan.com/">
+    <link rel="icon" href="assets/favicon.ico">
 
     <title>Online Course UI Exploration</title>
-
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Roboto:400,700" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
   </head>
 
-  <body data-spy="scroll" data-target="#sidenav" data-offset="0" style="">
-
+  <body class="pos-rel page-home">
     <nav class="container-fluid navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-      <a class="navbar-brand" href="#">Casco Viejo</a>
+      <span class="text-cardo text-lg text-blue">Alaska: A Changing Landscape</span>
     </nav>
     <!-- ============== SIDENAV ============= -->
-    <nav class="sidenav d-none" id="sidenav">
-      <nav class="nav flex-column">
-        <a href="#section-1" class="nav-link d-flex justify-content-center align-items-center">1</a>
-        <a href="#section-2" class="nav-link d-flex justify-content-center align-items-center">2</a>
-        <a href="#section-3" class="nav-link d-flex justify-content-center align-items-center">3</a>
-        <a href="#section-4" class="nav-link d-flex justify-content-center align-items-center">4</a>
-        <a href="#section-5" class="nav-link d-flex justify-content-center align-items-center">5</a>
+    <nav class="sidenav" id="sidenav">
+      <nav class="nav flex-column justify-content-center root-nav">
+        <div class="nav-link d-flex align-items-center">
+          <div class="diamond m-r-sm"></div>
+          <p class="text-xs m-b-0">Part I: Introduction</p>
+        </div>
+        <nav class="nav sub-nav m-t-xxs m-b-xxs">
+          <div class="progress scroll-progress">
+            <div class="progress-bar"></div>
+          </div>
+          <a class="nav-link d-flex align-items-center" href="#hero" style="top: 0;">
+            <div class="dot m-r"></div>
+            <p class="text-xxs m-b-0">Video: Welcome to Alaska</p>
+          </a>
+          <a class="nav-link d-flex align-items-center text-bold" href="#section-2" style="top: 0;">
+            <div class="dot m-r"></div>
+            <p class="text-xxs m-b-0">Discussion: How far north have you been?</p>
+          </a>
+          <a class="nav-link d-flex align-items-center text-bold" href="#section-3" style="top: 0;">
+            <div class="dot m-r"></div>
+            <p class="text-xxs m-b-0">Multiple Choice: History of Alaska</p>
+          </a>
+        </nav>
+        <a href="section-2.html" class="nav-link d-flex align-items-center">
+          <div class="diamond m-r-sm"></div>
+          <p class="text-xs m-b-0 text-bold">Part II: Local Geography</p>
+        </a>
+        <a href="" class="nav-link d-flex align-items-center">
+          <div class="diamond m-r-sm"></div>
+          <p class="text-xs m-b-0 text-bold">Part III: Traditional Foods</p>
+        </a>
+        <a href="" class="nav-link d-flex align-items-center">
+          <div class="diamond m-r-sm"></div>
+          <p class="text-xs m-b-0 text-bold">Part IV: The Effects of Climate Change</p>
+        </a>
       </nav>
     </nav>
     <!-- ============== /SIDENAV ============= -->
 
     <section id="hero" class="pos-rel">
-      <div class="blurred-img img-cover" style="background-image: url(http://cdn.theeverygirl.com/wp-content/uploads/2016/02/Panama-Citys-Casco-Viejo-The-Everygirl208.jpg)"></div>
+      <div class="blurred-img img-cover" style="background-image: url(assets/images/flyover-video-screenshot.png)"></div>
       <div class="container">
         <div id="hero-video-container">
           <div id="hero-video">
+            <div class="navbar-placeholder" style="min-height: 52px;"></div>
             <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="//www.youtube.com/embed/1U_EJLCN1bE?rel=0" allowfullscreen=""></iframe>
+              <iframe class="embed-responsive-item p-t p-b" src="//www.youtube.com/embed/oiBRknk98l8?rel=0" allowfullscreen=""></iframe>
             </div>
           </div>
         </div>
@@ -46,47 +74,98 @@
     <div class="bg-white pos-rel">
       <div class="container">
         <div class="row">
-          <div class="col-6 col-sm-7">
-            <section id="section-1" class="mb-4">
-              <h2 class="mb-3 pt-3">Section 1: Introduction</h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </section>
-            <section id="section-2" class="pt-5">
-              <h2 class="mb-3 pt-3">Section 2: The Culture</h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </section>
-            <section id="section-3" class="pt-5">
-              <h2 class="mb-3 pt-3">Section 3: Burgeoning Market</h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </section>
-            <section id="section-4" class="pt-5">
-              <h2 class="mb-3 pt-3">Section 4: Architecture</h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </section>
-            <section id="section-5" class="pt-5">
-              <h2 class="mb-3 pt-3">Section 5: Final Thoughts</h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <div class="col-6 col-sm-7 scrolling-area">
+            <section class="mb-4 pt-5">
+              <h1 class="mb-3 pt-4 text-cardo text-xxxxl">Part I: Introduction</h1>
+              <hr class="baby-blue">
+              <div class="m-b-xl text-xxs">
+                <span>Written by Joel K. Bourne, Jr.</span>
+                <span class="m-l-sm m-r-sm">/</span>
+                <span class="text-muted">Published September 1, 2016 for</span>
+                <a target="_blank" href="http://news.nationalgeographic.com/2016/09/alaska-has-finally-been-mapped-as-precisely-as-mars/">National Geographic</a>
+              </div>
+              <h2 class="text-lg text-bold m-b-xs">Alaska Has Finally Been Mapped as Precisely as Mars</h2>
+              <p id="section-1-1" class="text-xs">New topographic maps made from satellite data will help the state monitor—and plan for—its eroding coastlines and melting permafrost.</p>
+
+              <div class="text-cardo text-sm">
+                <p id="section-1-2">Exactly one year ago, President Barack Obama became the first sitting president to set foot above the Arctic Circle, visiting the small town of Kotzebue on Alaska's northwest coast. At least we think that's where he was. Alaska, like much of the Arctic, is remote, often ice- and fog-bound, and is therefore among the poorest mapped places on the planet. Some of the coastal charts still use data compiled by Captain Cook. We actually have far better topographic maps of Mars and the moon than we do of the 49th state. During his visit, the president promised that the government could do better.</p>
+
+                <p>On Thursday, the government delivered: The White House, the National Science Foundation, and the National Geospatial Intelligence Agency (NGA) released the most accurate digital elevation maps of Alaska ever created.</p>
+
+                <p>Whereas existing topographical maps don’t resolve features smaller than a hundred feet across, the new maps have a horizontal resolution of around 7 to 17 feet. Their vertical resolution is comparable, but in some places they show elevation differences of less than two feet—sharp enough to detect the rapid changes that a warming climate is creating in the topography of Alaska.</p>
+
+                <p>"This is a game-changing data set," said Paul Morin, director of the University of Minnesota's Polar Geospatial Center, who is overseeing the production of the new maps from satellite imagery. “No other country could have done this.” Arctic DEM, as the project is known, is rolling out with Alaska, but by the end of 2017—after a supercomputer in Illinois has crunched all the satellite data—it will cover the entire Arctic above 60º north latitude, in Canada, Russia, and other Arctic countries. (Read about the challenges of the Arctic resource boom.)</p>
+
+                <p>"This changes how science will be done in the Arctic," Morin said. "It's a biologist's dream, a geologist's dream, a geographer's dream. Anybody who deals with the surface of the Earth needs these data."</p>
+
+                <p>That includes people in Kotzebue, which sits on a gravel peninsula roughly ten feet above an increasingly destructive Chukchi Sea. Or in Shishmaref, whose residents voted last week to relocate their tiny, flood-prone village, which has been occupied for more than 400 years. A recent study by the nonprofit Arctic Institute reported that 31 Alaskan villages faced "imminent threat of destruction" from flooding and erosion.</p>
+
+                <p>The new maps should make it easier for those villages both to monitor the threat and plan their future. "I can't wait to see the results," said Noah Naylor of Kotzebue, planning director for the vast Northwest Borough.</p>
+              </div>
             </section>
           </div>
-          <div class="col-6 col-sm-5 d-flex">
-            <div class="sticky-column bg-faded w-100 h-100"></div>
+          <div class="col-6 col-sm-5 d-flex bg-fade">
+            <div class="sticky-column w-100 h-100"></div>
           </div>
         </div>
       </div>
     </div>
 
+    <section id="section-2" class="pt-5 container">
+      <h2 class="mb-3 pt-4">Part 2: Carousel</h2>
+      <div id="image-carousel" class="carousel slide" data-ride="carousel-stop">
+        <div class="carousel-inner" role="listbox">
+          <ol class="carousel-indicators">
+            <li data-target="#image-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#image-carousel" data-slide-to="1"></li>
+            <li data-target="#image-carousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-item active img-cover" style="background-image: url(http://www.nationalgeographic.com/content/dam/environment/photos/000/277/27792.ngsversion.1492817413666.adapt.945.1.jpg);">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>YOSEMITE VALLEY IN WINTER</h3>
+              <p>PHOTOGRAPH BY JESSE ESTES, YOUR SHOT</p>
+            </div>
+          </div>
+          <div class="carousel-item img-cover" style="background-image: url(http://www.nationalgeographic.com/content/dam/environment/photos/000/277/27793.ngsversion.1492817409574.adapt.945.1.jpg);">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>WINTER BRAMBLES</h3>
+              <p>PHOTOGRAPH BY DARRELL HAYWARD, YOUR SHOT</p>
+            </div>
+          </div>
+          <div class="carousel-item img-cover" style="background-image: url(http://www.nationalgeographic.com/content/dam/environment/photos/000/277/27794.ngsversion.1492817411523.adapt.945.1.jpg);">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>THREE FROZEN TREES</h3>
+              <p>PHOTOGRAPH BY MATAS JURAS, YOUR SHOT</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#image-carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#image-carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+    <section id="section-3" class="pt-5 container">
+      <h2 class="mb-3 pt-4">Part 3: TOO BIG TO MAP BY PLANE</h2>
+      <div class="text-cardo text-sm">
+        <p>In the lower 48 states of the U.S., most elevation data for topographic maps are collected by radar from low-flying aircraft and then verified by surveyors on the ground. But that process is far too expensive for Alaska and the vast reaches of the Arctic, which includes close to eight million square miles of mostly remote wilderness above the 60th parallel.</p>
+        <p>The data for the new maps come via the NGA from commercial satellites operated by DigitalGlobe, which orbit the poles every hour. The newest of these have cameras sharp enough to see not only grandma's house in Anchorage but also grandma's husky sleeping in the backyard. Researchers have even used the satellites in Antarctica to count emperor penguins.</p>
+
+        <p>The key to extremely accurate elevation maps is to use stereoscopic images of the same location taken 45 seconds apart, Morin explained. The NGA has been providing such imagery of the polar regions to the National Science Foundation for six years. The resulting maps around NSF’s research stations in Antarctica have already helped find safe places for airplanes to land and safe routes for snowcats to travel, said Brian Bates of the NGA.</p>
+
+        <p>"When the White House called for proposals last year to help people in the Arctic with climate resiliency, we thought this is something we can do efficiently and economically," Bates said. "These DEMs are fantastic planning tools, particularly for climate change. It's a great planning tool for indigenous folks who are trying to sustain their communities." Accurate topographic data, he said, are essential for building new seawalls, roads, and airstrips, and even for deciding whether enough freshwater will be available in a new location.</p>
+
+        <p>With six years of past data, and data collection funded for four more years, Arctic DEM “will be a benchmark for future change,” said Fabien Laurier, a senior policy advisor at the White House who is coordinating the project. “The imagery can be collected at intervals" to see change “as it is actually occurring.”</p>
+
+        <p>"This is a big deal for us," said Tom Heinrichs, director of the Geographic Information Network of Alaska at the University of Alaska, Fairbanks. The types of change the Arctic DEM project can reveal, he said, include coastal erosion, which is eating away at Alaska's North Slope at 20 to 60 feet a year in some places; forest loss from wildfires or logging; shrinking glaciers, such as the Columbia Glacier in southeast Alaska; and melting permafrost, which is causing land to slump and undermining structures in large swaths of the state.</p>
+
+        <p>The Arctic DEM data will be freely accessible to anyone on the NGA website and through a web-based viewer created by the mapmaking company ESRI. "With villages deciding to relocate and all the upheaval that causes, these maps are not coming a minute too soon," said Ambassador Mark Brzezinski, director of the Arctic steering commitee at the White House. "Through these maps, the federal government can work hand in hand with villages to empower people on the local level. But there will be global benefits as well. Because what happens in the Arctic doesn't stay in the Arctic. The sooner we develop a detailed understanding of what's happening there, the better we all will be."</p>
+      </div>
+    </section>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

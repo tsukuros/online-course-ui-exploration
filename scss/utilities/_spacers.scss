@@ -1,0 +1,120 @@
+// Width
+.min-w-0 {min-width: 0;}
+
+// Positioning
+.pos-rel { position: relative; }
+.pos-abs { position: absolute; }
+.pos-fix-t {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+.pos-fix-b {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+hr.baby-blue { border-top: 1px solid $baby-blue; }
+
+// Spacers
+$spacers-custom: (
+  xxxs: 4px,
+  xxs: 6px,
+  xs: 10px,
+  sm: 15px,
+  null: 20px,
+  lg: 30px,
+  xl: 40px,
+  xxl: 50px,
+  xxxl: 60px
+) !default;
+
+@each $name, $value in $spacers-custom {
+  @if ($name == null){
+    .m-t { margin-top: $value; }
+    .m-r { margin-right: $value; }
+    .m-b { margin-bottom: $value; }
+    .m-l { margin-left: $value; }
+    .m-a { margin: $value; }
+
+    .p-t { padding-top: $value; }
+    .p-r { padding-right: $value; }
+    .p-b { padding-bottom: $value; }
+    .p-l { padding-left: $value; }
+    .p-a { padding: $value; }
+  } @else {
+    .m-t-#{$name} { margin-top: $value; }
+    .m-r-#{$name} { margin-right: $value; }
+    .m-b-#{$name} { margin-bottom: $value; }
+    .m-l-#{$name} { margin-left: $value; }
+    .m-a-#{$name} { margin: $value; }
+
+    .p-t-#{$name} { padding-top: $value; }
+    .p-r-#{$name} { padding-right: $value; }
+    .p-b-#{$name} { padding-bottom: $value; }
+    .p-l-#{$name} { padding-left: $value; }
+    .p-a-#{$name} { padding: $value; }
+  }
+}
+// Margin and Padding
+
+.m-x-auto {
+  margin-right: auto !important;
+  margin-left:  auto !important;
+}
+.m-y-auto {
+  margin-top: auto !important;
+  margin-bottom:  auto !important;
+}
+
+// auto margin
+.m-a-auto { margin: auto; }
+.m-t-auto { margin-top: auto; }
+.m-r-auto { margin-right: auto; }
+.m-b-auto { margin-bottom: auto; }
+.m-l-auto { margin-left: auto; }
+
+@each $name, $value in $spacers-custom {
+  @if ($name == null){
+    .m-a { margin-left: $value; }
+    .m-t { margin-top: $value; }
+    .m-r { margin-right: $value; }
+    .m-b { margin-bottom: $value; }
+    .m-l { margin-left: $value; }
+
+    .p-a { padding: $value; }
+    .p-t { padding-top: $value; }
+    .p-r { padding-right: $value; }
+    .p-b { padding-bottom: $value; }
+    .p-l { padding-left: $value; }
+  } @else {
+    .m-a-#{$name} { margin: $value; }
+    .m-t-#{$name} { margin-top: $value; }
+    .m-r-#{$name} { margin-right: $value; }
+    .m-b-#{$name} { margin-bottom: $value; }
+    .m-l-#{$name} { margin-left: $value; }
+
+    .p-a-#{$name} { padding: $value; }
+    .p-t-#{$name} { padding-top: $value; }
+    .p-r-#{$name} { padding-right: $value; }
+    .p-b-#{$name} { padding-bottom: $value; }
+    .p-l-#{$name} { padding-left: $value; }
+  }
+}
+// negate margin
+.m-a-0 { margin: 0 !important; }
+.m-t-0 { margin-top: 0 !important; }
+.m-r-0 { margin-right: 0 !important; }
+.m-b-0 { margin-bottom: 0 !important; }
+.m-l-0 { margin-left: 0 !important; }
+// negate padding
+.p-a-0 { padding: 0 !important; }
+.p-t-0 { padding-top: 0 !important; }
+.p-r-0 { padding-right: 0 !important; }
+.p-b-0 { padding-bottom: 0 !important; }
+.p-l-0 { padding-left: 0 !important; }

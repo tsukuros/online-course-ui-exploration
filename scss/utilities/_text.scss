@@ -1,0 +1,43 @@
+//
+// Text
+//
+
+// Font Sizes
+.text-xxxs { font-size: 12px; }
+.text-xxs { font-size: 14px; }
+.text-xs { font-size: 16px; }
+.text-sm { font-size: 18px; }
+.text-md { font-size: 20px; }
+.text-lg { font-size: 24px; }
+.text-xl { font-size: 28px; }
+.text-xxl { font-size: 32px; }
+.text-xxxl { font-size: 36px; }
+.text-xxxxl { font-size: 42px; }
+.text-xxxxxl { font-size: 48px; }
+
+@include media-breakpoint-down(xs) {
+  .text-xxs { font-size: 12px; }
+  .text-xs { font-size: 14px; }
+  .text-sm { font-size: 16px; }
+  .text-md { font-size: 18px; }
+  .text-lg { font-size: 20px; }
+  .text-xl { font-size: 24px; }
+  .text-xxl { font-size: 28px; }
+  .text-xxxl { font-size: 32px; }
+  .text-xxxxl { font-size: 36px; }
+  .text-xxxxxl { font-size: 42px; }
+}
+
+// Font Families
+.text-roboto { font-family: 'Roboto', sans-serif; }
+.text-cardo { font-family: 'Cardo', sans-serif; }
+
+// Colors
+.text-blue { color: #a8d0ff; }
+
+// Font Weights
+.text-light { font-weight: 300; }
+.text-normal { font-weight: normal !important; }
+.text-bold { font-weight: bold; }
+
+.text-nowrap { white-space: nowrap; }
