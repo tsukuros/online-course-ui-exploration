@@ -19,6 +19,7 @@
   ShrinkableStickyHeroVideo.prototype = {
     constructor: ShrinkableStickyHeroVideo,
     onScroll: function(e) {
+      if (this.$win.width() < 768) return;
       var st = $(e.currentTarget).scrollTop();
       var videoHeight = this.$video.outerHeight();
       if(st > 0) {
@@ -62,7 +63,9 @@
       this.$heroSection.css({minHeight: this.videoHeight});
     },
     onResize: function(e) {
-      this.updateDimensionsAndPositions();
+      if (this.$win.width() > 767) {
+        this.updateDimensionsAndPositions();
+      }
     }
   }
 

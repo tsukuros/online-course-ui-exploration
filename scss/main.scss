@@ -1,8 +1,11 @@
 @import './bootstrap/bootstrap';
 @import './components/sidenav';
 @import './components/sticky-on-scroll-column';
+@import './components/instagram-gallery';
+@import './layout/header';
 @import './utilities/index';
 @import './pages/home';
+@import './pages/part-2';
 
 body {
   min-height: 75rem;

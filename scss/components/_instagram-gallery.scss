@@ -1,0 +1,45 @@
+.instagram-gallery {
+  .fa.fa-instagram {
+    display: block;
+    top: 20px;
+    right: 30px;
+    opacity: 0.8;
+    font-size: 30px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+    &:hover {
+      opacity: 1;
+      &:after {
+        opacity: 1;
+      }
+    }
+    &:after {
+      content: 'View on Instagram';
+      padding: 10px;
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      opacity: 0;
+      background-color: rgba(53, 54, 64, 0.9);
+      transition: all 0.25s ease-in-out;
+      font-family: Roboto;
+      white-space: nowrap;
+      font-size: 14px;
+      color: #ebebf1;
+      border-radius: 3px;
+    }
+  }
+  .img-caption {
+    background-color: rgba(53, 54, 64, 0.9);
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    h5 {
+      color: #ebebf1;
+    }
+    p {
+      color: #aeafbd;
+    }
+  }
+}

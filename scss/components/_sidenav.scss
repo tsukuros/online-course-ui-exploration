@@ -7,11 +7,11 @@
   padding-top: 20px;
   padding-bottom: 20px;
   max-width: 50px;
-  margin-top: 72px;
+  margin-top: 86px;
   width: auto;
   overflow: hidden;
   transition: all 0.25s ease-in-out;
-  &:hover {
+  &:hover, &.in {
     max-width: 350px;
     opacity: 1;
   }
@@ -20,17 +20,27 @@
       white-space: nowrap;
       transition: all 0.25s ease-in-out;
       color: #ffffff;
-      &.active, &.read {
+      &.active {
         .diamond {
           border-color: $carolina-blue;
         }
         color: $carolina-blue;
       }
-      &:not(.active):not(.read):hover {
+      &:not(.active):hover {
         .diamond {
           border-color: $baby-blue;
         }
         color: $baby-blue;
+      }
+      &.read {
+        .diamond {
+          border-color: #ffffff;
+          background-color: #ffffff;
+        }
+        &:hover .diamond {
+          border-color: #ffffff;
+          background-color: #ffffff;
+        }
       }
     }
     .diamond {
@@ -55,12 +65,26 @@
     &:before {
       content: '';
       position: absolute;
-      z-index: 1;
+      z-index: -1;
       width: 100%;
       height: 15px;
       left: 0;
       bottom: 100%;
       background-color: #85beff;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      width: 3px;
+      height: 10px;
+      top: calc(100% + 5px);
+      left: 0;
+      background-color: #ffffff;
+      transition: all 0.25s ease-in-out;
+    }
+    &.complete:after {
+      background-color: $carolina-blue;
     }
     .dot {
       width: 11px;
