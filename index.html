@@ -9,26 +9,33 @@
 
     <title>Online Course UI Exploration</title>
     <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Roboto:400,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
   </head>
 
   <body class="pos-rel page-home">
-    <nav class="container-fluid navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+    <nav class="container-fluid navbar navbar-toggleable-sm navbar-inverse fixed-top bg-inverse d-flex align-items-center flex-wrap p-a-sm">
       <span class="text-cardo text-lg text-blue">Alaska: A Changing Landscape</span>
+      <div class="d-none d-sm-block m-r-auto"></div>
+      <div class="d-flex">
+        <a href="https://tsukuros.com" class="personal-website-link">Developed by <span class="text-nowrap">Oleksandr Tsukur</span></a>
+        <span class="m-l-sm m-r-sm" style="color: #aeafbd;">/</span>
+        <a href="http://www.royarakhshan.com/" class="personal-website-link">Designed by <span class="text-nowrap">Roya Rakhshan</span></a>
+      </div>
     </nav>
     <!-- ============== SIDENAV ============= -->
     <nav class="sidenav" id="sidenav">
       <nav class="nav flex-column justify-content-center root-nav">
-        <div class="nav-link d-flex align-items-center">
+        <div class="nav-link d-flex align-items-center" data-section="section-1">
           <div class="diamond m-r-sm"></div>
           <p class="text-xs m-b-0">Part I: Introduction</p>
         </div>
-        <nav class="nav sub-nav m-t-xxs m-b-xxs">
+        <nav class="nav sub-nav m-t-xxs m-b">
           <div class="progress scroll-progress">
             <div class="progress-bar"></div>
           </div>
-          <a class="nav-link d-flex align-items-center" href="#hero" style="top: 0;">
+          <a class="nav-link d-flex align-items-center read" href="#hero" style="top: 0;">
             <div class="dot m-r"></div>
             <p class="text-xxs m-b-0">Video: Welcome to Alaska</p>
           </a>
@@ -41,15 +48,15 @@
             <p class="text-xxs m-b-0">Multiple Choice: History of Alaska</p>
           </a>
         </nav>
-        <a href="section-2.html" class="nav-link d-flex align-items-center">
+        <a href="part-2.html" data-section="section-2" class="nav-link d-flex align-items-center">
           <div class="diamond m-r-sm"></div>
           <p class="text-xs m-b-0 text-bold">Part II: Local Geography</p>
         </a>
-        <a href="" class="nav-link d-flex align-items-center">
+        <a href="" data-section="section-3" class="nav-link d-flex align-items-center">
           <div class="diamond m-r-sm"></div>
           <p class="text-xs m-b-0 text-bold">Part III: Traditional Foods</p>
         </a>
-        <a href="" class="nav-link d-flex align-items-center">
+        <a href="" data-section="section-4" class="nav-link d-flex align-items-center">
           <div class="diamond m-r-sm"></div>
           <p class="text-xs m-b-0 text-bold">Part IV: The Effects of Climate Change</p>
         </a>
@@ -62,7 +69,7 @@
       <div class="container">
         <div id="hero-video-container">
           <div id="hero-video">
-            <div class="navbar-placeholder" style="min-height: 52px;"></div>
+            <div class="navbar-placeholder" style="min-height: 66px;"></div>
             <div class="embed-responsive embed-responsive-16by9">
               <iframe class="embed-responsive-item p-t p-b" src="//www.youtube.com/embed/oiBRknk98l8?rel=0" allowfullscreen=""></iframe>
             </div>
@@ -74,7 +81,7 @@
     <div class="bg-white pos-rel">
       <div class="container">
         <div class="row">
-          <div class="col-6 col-sm-7 scrolling-area">
+          <div class="col-12 col-md-7 scrolling-area">
             <section class="mb-4 pt-5">
               <h1 class="mb-3 pt-4 text-cardo text-xxxxl">Part I: Introduction</h1>
               <hr class="baby-blue">
@@ -104,7 +111,7 @@
               </div>
             </section>
           </div>
-          <div class="col-6 col-sm-5 d-flex bg-fade">
+          <div class="col-12 col-md-5 d-flex bg-fade">
             <div class="sticky-column w-100 h-100"></div>
           </div>
         </div>
@@ -112,7 +119,7 @@
     </div>
 
     <section id="section-2" class="pt-5 container">
-      <h2 class="mb-3 pt-4">Part 2: Carousel</h2>
+      <h2 class="mb-3 pt-4 text-lg text-bold">How far north have you been?</h2>
       <div id="image-carousel" class="carousel slide" data-ride="carousel-stop">
         <div class="carousel-inner" role="listbox">
           <ol class="carousel-indicators">
@@ -150,7 +157,7 @@
       </div>
     </section>
     <section id="section-3" class="pt-5 container">
-      <h2 class="mb-3 pt-4">Part 3: TOO BIG TO MAP BY PLANE</h2>
+      <h2 class="mb-3 pt-4 text-lg text-bold">Too Big To Map By Plane</h2>
       <div class="text-cardo text-sm">
         <p>In the lower 48 states of the U.S., most elevation data for topographic maps are collected by radar from low-flying aircraft and then verified by surveyors on the ground. But that process is far too expensive for Alaska and the vast reaches of the Arctic, which includes close to eight million square miles of mostly remote wilderness above the 60th parallel.</p>
         <p>The data for the new maps come via the NGA from commercial satellites operated by DigitalGlobe, which orbit the poles every hour. The newest of these have cameras sharp enough to see not only grandma's house in Anchorage but also grandma's husky sleeping in the backyard. Researchers have even used the satellites in Antarctica to count emperor penguins.</p>

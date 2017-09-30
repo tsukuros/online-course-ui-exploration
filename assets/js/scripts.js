@@ -2,20 +2,24 @@
 
   function SideNavScrollProgress(el) {
     this.$el = $(el);
+    this.$subnav = this.$el.find('.sub-nav');
     this.$sectionIndicators = this.$el.find('.sub-nav .nav-link');
     this.$scrollProgressBar = this.$el.find('.scroll-progress .progress-bar');
     this.$scrollingArea = $('body');
     this.$scrollingAreaHeight = this.$scrollingArea.height();
     this.$scrollingAreaOffsetTop = this.$scrollingArea.offset().top;
     this.$win = $(window);
+    this.$container = $('.container').first();
     this.trackScrollProgressByTop = true;
+    this.reachedBottomOnce = false;
     
     this.init();
 
     this.$win
       .on('scroll', this.onScroll.bind(this))
       .on('resize', this.onResize.bind(this))
-      .scroll();
+      .scroll()
+      .resize();
   }
 
   SideNavScrollProgress.prototype = {
@@ -30,23 +34,35 @@
         target: '#sidenav',
       });
       this.$win.on('activate.bs.scrollspy', function(e, o){
-        // console.log('o', o.relatedTarget);
-        $('[href="'+o.relatedTarget+'"]').removeClass('text-bold');
+        $('[href="'+o.relatedTarget+'"]')
+          .addClass('read')
+          .removeClass('text-bold');
       })
     },
     onScroll: function(e) {
-      if (this.reachedBottomOnce) return;
       var scrolledBottom = this.$win.scrollTop() + this.$win.height();
       var scrolledPx = scrolledBottom - this.$scrollingAreaOffsetTop;
       if (scrolledPx < 0) return;
       var scrolledPercent = (scrolledPx /  this.$scrollingAreaHeight) * 100;
       if (scrolledPercent > 100) {
         scrolledPercent = 100;
+        this.reachedBottomOnce = true;
+        this.$subnav.addClass('complete');
+      } else {
+        this.$subnav.removeClass('complete');
       }
+      if (this.reachedBottomOnce) this.fillUpCurrentDiamond();
       this.$scrollProgressBar.css({ height: scrolledPercent + '%' })
     },
     onResize: function(e) {
-      console.log('onResize');
+      var offset = this.$container.offset();
+      var gutter = 40;
+      var sideNavWidth = this.$el.width();
+      if (offset.left > sideNavWidth + gutter) {
+        this.$el.css({ left: offset.left - sideNavWidth - gutter });
+      } else {
+        this.$el.css({ left: '' });
+      }
     },
     setPositions: function(){
       this.winHeight = this.$win.height();
@@ -54,19 +70,31 @@
         var sectionId = el.getAttribute('href');
         var offsetTopPx = $(sectionId).offset().top;
 
-        var offsetTopPercent = ((offsetTopPx) / this.$scrollingAreaHeight) * 100;
-        $(el).css({ top: 'calc(' + offsetTopPercent + '% - 6px)' });
+        var offsetTopPercent = ((offsetTopPx + this.winHeight) / this.$scrollingAreaHeight) * 100;
+        offsetTopPercent = offsetTopPercent > 100 ? 100 : offsetTopPercent;
+        $(el).css({ top: 'calc(' + offsetTopPercent + '% - 10px)' });
       }.bind(this));
     },
     setReadSections: function(){
       var currentSection = this.$el.find('.root-nav > .nav-link.active')
-      var readSections = localStorage.getItem('sections');
-      if (!readSections) {
-        localStorage.setItem('sections', JSON.stringify(['section-1']))
+      this.readSections = localStorage.getItem('sections');
+      if (!this.readSections) {
+        this.readSections = [currentSection.data('section')];
+        localStorage.setItem('sections', JSON.stringify(this.readSections))
       } else {
-        readSections = JSON.parse(readSections);
+        this.readSections = JSON.parse(this.readSections);
+        this.readSections.forEach(function(sectionId) {
+          $('[data-section="'+sectionId+'"]').addClass('read');
+        });
       }
-      console.log('readSections', readSections);
+    },
+    fillUpCurrentDiamond: function() {
+      var currentActiveSection = $('.root-nav > .nav-link.active').addClass('read');
+      var dataSection = currentActiveSection.data('section');
+      if (this.readSections.indexOf(dataSection) == -1) {
+        this.readSections.push(dataSection);
+        localStorage.setItem('sections', JSON.stringify(this.readSections))
+      }
     }
   }
 
@@ -108,6 +136,7 @@
   ShrinkableStickyHeroVideo.prototype = {
     constructor: ShrinkableStickyHeroVideo,
     onScroll: function(e) {
+      if (this.$win.width() < 768) return;
       var st = $(e.currentTarget).scrollTop();
       var videoHeight = this.$video.outerHeight();
       if(st > 0) {
@@ -151,7 +180,9 @@
       this.$heroSection.css({minHeight: this.videoHeight});
     },
     onResize: function(e) {
-      this.updateDimensionsAndPositions();
+      if (this.$win.width() > 767) {
+        this.updateDimensionsAndPositions();
+      }
     }
   }
 
