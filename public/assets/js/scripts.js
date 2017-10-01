@@ -9,7 +9,7 @@
     this.$scrollingAreaHeight = this.$scrollingArea.height();
     this.$scrollingAreaOffsetTop = this.$scrollingArea.offset().top;
     this.$win = $(window);
-    this.$container = $('.container').first();
+    this.$container = $('.content-wrapper').first();
     this.trackScrollProgressByTop = true;
     this.reachedBottomOnce = false;
     
@@ -44,7 +44,7 @@
       var scrolledPx = scrolledBottom - this.$scrollingAreaOffsetTop;
       if (scrolledPx < 0) return;
       var scrolledPercent = (scrolledPx /  this.$scrollingAreaHeight) * 100;
-      if (scrolledPercent > 100) {
+      if (scrolledPercent >= 100) {
         scrolledPercent = 100;
         this.reachedBottomOnce = true;
         this.$subnav.addClass('complete');
@@ -121,7 +121,6 @@
     this.$el = $(el);
     this.$video = $('#hero-video');
     this.$videoContainer = $('#hero-video-container');
-    this.$heroSection = $('#hero');
     this.$stickyColumn = $('.sticky-column');
     this.$header = $('.navbar.fixed-top');
     this.$win = $(window);
@@ -177,7 +176,7 @@
       this.headerHeight = this.$header.outerHeight();
 
       this.$video.css({right: this.videoRight});
-      this.$heroSection.css({minHeight: this.videoHeight});
+      this.$el.css({minHeight: this.videoHeight});
     },
     onResize: function(e) {
       if (this.$win.width() > 767) {
@@ -199,6 +198,6 @@
     });
   };
 
-  $('#hero').shrinkableStickyHeroVideo();
+  $('#intro').shrinkableStickyHeroVideo();
 
 })(jQuery);

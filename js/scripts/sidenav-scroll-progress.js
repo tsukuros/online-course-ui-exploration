@@ -9,7 +9,7 @@
     this.$scrollingAreaHeight = this.$scrollingArea.height();
     this.$scrollingAreaOffsetTop = this.$scrollingArea.offset().top;
     this.$win = $(window);
-    this.$container = $('.container').first();
+    this.$container = $('.content-wrapper').first();
     this.trackScrollProgressByTop = true;
     this.reachedBottomOnce = false;
     
@@ -44,7 +44,7 @@
       var scrolledPx = scrolledBottom - this.$scrollingAreaOffsetTop;
       if (scrolledPx < 0) return;
       var scrolledPercent = (scrolledPx /  this.$scrollingAreaHeight) * 100;
-      if (scrolledPercent > 100) {
+      if (scrolledPercent >= 100) {
         scrolledPercent = 100;
         this.reachedBottomOnce = true;
         this.$subnav.addClass('complete');

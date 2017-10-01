@@ -4,7 +4,6 @@
     this.$el = $(el);
     this.$video = $('#hero-video');
     this.$videoContainer = $('#hero-video-container');
-    this.$heroSection = $('#hero');
     this.$stickyColumn = $('.sticky-column');
     this.$header = $('.navbar.fixed-top');
     this.$win = $(window);
@@ -60,7 +59,7 @@
       this.headerHeight = this.$header.outerHeight();
 
       this.$video.css({right: this.videoRight});
-      this.$heroSection.css({minHeight: this.videoHeight});
+      this.$el.css({minHeight: this.videoHeight});
     },
     onResize: function(e) {
       if (this.$win.width() > 767) {
@@ -82,6 +81,6 @@
     });
   };
 
-  $('#hero').shrinkableStickyHeroVideo();
+  $('#intro').shrinkableStickyHeroVideo();
 
 })(jQuery);
