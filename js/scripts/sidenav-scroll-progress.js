@@ -84,7 +84,10 @@
       } else {
         this.readSections = JSON.parse(this.readSections);
         this.readSections.forEach(function(sectionId) {
-          $('[data-section="'+sectionId+'"]').addClass('read');
+          $('[data-section="'+sectionId+'"]')
+            .addClass('read')
+            .find('.text-bold')
+            .removeClass('text-bold');
         });
       }
     },

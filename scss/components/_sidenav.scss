@@ -24,6 +24,10 @@
         .diamond {
           border-color: $carolina-blue;
         }
+        &.read .diamond {
+          border-color: $carolina-blue;
+          background-color: $carolina-blue;
+        }
         color: $carolina-blue;
       }
       &:not(.active):hover {
@@ -32,14 +36,14 @@
         }
         color: $baby-blue;
       }
-      &.read {
+      &.read:not(.active) {
         .diamond {
           border-color: #ffffff;
           background-color: #ffffff;
         }
         &:hover .diamond {
-          border-color: #ffffff;
-          background-color: #ffffff;
+          border-color: $baby-blue;
+          background-color: $baby-blue;
         }
       }
     }
