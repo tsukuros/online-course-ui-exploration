@@ -37,7 +37,7 @@
         }
         // pull video up if hit the bottom of the section
         if (st + videoHeight > this.stickyColumnBottom) {
-          this.$video.css({ top: (this.stickyColumnBottom + this.headerHeight) - (st + this.headerHeight + videoHeight)})
+          this.$video.css({ top: (this.stickyColumnBottom + this.headerHeight) - (st + this.headerHeight + videoHeight)});
         } else {
           this.$video.css({ top: '' });
         }
@@ -66,7 +66,7 @@
         this.updateDimensionsAndPositions();
       }
     }
-  }
+  };
 
   window.ShrinkableStickyHeroVideo = ShrinkableStickyHeroVideo;
 
