@@ -42,9 +42,16 @@
       '<h3 style="font-size: 16px; margin-bottom: 20px;">'+name+'</h3>'+
       '<p style="font-size: 16px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>'+
     '</div>';
-  }
+  };
+
 
   function initMap() {
+    var defaultIcon = {
+      url: 'assets/images/part-3/bullseye.svg',
+      size: new google.maps.Size(62, 62),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(31, 31),
+    };
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 6,
       center: {lat: 61.7551453, lng: -150.0472705},
@@ -57,6 +64,7 @@
         position: {lat: marker.lat, lng: marker.lng},
         map: map,
         title: marker.title,
+        icon: defaultIcon,
       });
     });
 
@@ -68,14 +76,18 @@
     markerInstances.forEach(function(markerInstance) {
       markerInstance.addListener('click', function() {
         markerInstances.forEach(function(markerInst) {
-          if (markerInstance !== markerInst) markerInst.setIcon(null);
+          if (markerInstance !== markerInst) markerInst.setIcon(defaultIcon);
         });
+
         markerInstance.setIcon({
           url: 'assets/images/part-3/active-bullseye.svg',
           size: new google.maps.Size(136, 136),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(68, 68),
         });
+
+        map.panTo(markerInstance.getPosition());
+
         infowindow.setContent(getInfoWindowContent(markerInstance.getTitle()));
         infowindow.open(map, markerInstance);
       });
