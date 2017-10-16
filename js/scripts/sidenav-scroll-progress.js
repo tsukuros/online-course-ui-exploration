@@ -12,6 +12,7 @@
     this.$container = $('.content-wrapper').first();
     this.trackScrollProgressByTop = true;
     this.reachedBottomOnce = false;
+    this.TAB_KEY = 9;
     
     this.init();
 
@@ -20,6 +21,7 @@
       .on('resize', this.onResize.bind(this))
       .scroll()
       .resize();
+    $(document).on('keyup', this.onKeyUp.bind(this));
   }
 
   SideNavScrollProgress.prototype = {
@@ -39,12 +41,20 @@
           .removeClass('text-bold');
       })
     },
+    onKeyUp: function(e) {
+      if (e.keyCode !== this.TAB_KEY) return;
+      if ($(document.activeElement).closest('.sidenav').length) {
+        this.$el.addClass('in');
+      } else {
+        this.$el.removeClass('in');
+      }
+    },
     onScroll: function(e) {
       var scrolledBottom = this.$win.scrollTop() + this.$win.height();
       var scrolledPx = scrolledBottom - this.$scrollingAreaOffsetTop;
       if (scrolledPx < 0) return;
       var scrolledPercent = (scrolledPx /  this.$scrollingAreaHeight) * 100;
-      if (scrolledPercent >= 100) {
+      if (scrolledPercent > 99) {
         scrolledPercent = 100;
         this.reachedBottomOnce = true;
         this.$subnav.addClass('complete');

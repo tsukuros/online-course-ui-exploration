@@ -24,7 +24,7 @@
       if(st > 0) {
         this.$videoContainer.addClass('container');
         this.$video.addClass('in');
-        var shrunkWidth = this.containerWidth - st;
+        var shrunkWidth = this.containerWidth - (st * 2);
         // set video width
         if (shrunkWidth > this.stickyColumnWidth) {
           this.$video.css({
