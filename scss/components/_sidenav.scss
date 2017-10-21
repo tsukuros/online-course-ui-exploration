@@ -6,13 +6,12 @@
   display: inline-block;
   padding-top: 20px;
   padding-bottom: 20px;
-  max-width: 50px;
+  width: 50px;
   margin-top: 86px;
-  width: auto;
   overflow: hidden;
   transition: all 0.25s ease-in-out;
   &:hover, &.in {
-    max-width: 350px;
+    width: 330px;
     opacity: 1;
   }
   .root-nav {

@@ -33,7 +33,12 @@
           position: {lat: marker.lat, lng: marker.lng},
           map: map,
           title: marker.title,
-          icon: that.getIcon('\uf041', '#3d91f3'),
+          icon: {
+            url: 'assets/images/part-3/bullseye-w-24px.svg',
+            size: new google.maps.Size(24, 24),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(12, 12),
+          },
         });
       });
       
@@ -51,7 +56,7 @@
     },
     renderMapKeys: function(markers) {
       return markers.map(function(marker){
-        return '<div class="m-t-sm text-xs text-truncate"><i class="fa fa-map-marker m-r-xs" style="color: #85beff;"></i><span>'+marker.title+'</span></div>';
+        return '<div class="m-t-sm text-xs text-truncate"><img src="assets/images/part-3/bullseye.svg" class="img-fluid m-r-xs" style="color: #85beff; width: 24px;" /><span>'+marker.title+'</span></div>';
       }).join('');
     },
     onScroll: function(e) {

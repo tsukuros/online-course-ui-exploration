@@ -1,49 +1,49 @@
 window.markers = [
   {
     title: 'Glacier Bay National Park and Preserve',
-    description: 'The earliest traces of human occupation at Glacier Bay date to about 10,000 years before the present, with archaeological sites just outside the park dating to that time.[30] Evidence of human activity is scarce, because so much of the area is or was glaciated for much of the period and because advancing glaciers may have scoured all traces of historical occupation from their valleys.',
+    description: 'The earliest traces of human occupation at Glacier Bay date to about 10,000 years before the present, with archaeological sites just outside the park dating to that time.',
     srcUrl: 'https://en.wikipedia.org/wiki/Glacier_Bay_National_Park_and_Preserve#Activities',
     lat: 58.665807,
     lng: -136.900215,
   },
   {
     title: 'Wrangell-St. Elias National Park & Preserve',
-    description: 'This park includes a large portion of the Saint Elias Mountains, which include most of the highest peaks in the United States and Canada, yet are within 10 miles (16 km) of tidewater, one of the highest reliefs in the world. Wrangell–St. Elias borders on Canada\'s Kluane National Park and Reserve to the east and approaches the U.S. Glacier Bay National Park to the south.',
+    description: 'This park includes a large portion of the Saint Elias Mountains, which include most of the highest peaks in the United States and Canada, yet are within 10 miles (16 km) of tidewater, one of the highest reliefs in the world.',
     srcUrl: 'https://en.wikipedia.org/wiki/Wrangell%E2%80%93St._Elias_National_Park_and_Preserve',
     lat: 61.710445,
     lng: -142.98568,
   },
   {
     title: 'Katmai National Park and Preserve',
-    description: 'Text: This park includes as many as 18 individual volcanoes, seven of which have been active since 1900. The most significant volcanic event in history was the eruption of Mount Katmai and Novarupta in June 1912. Novarupta\'s eruption covered a nearby valley with ash. At the same time, the summit of Katmai collapsed into a caldera. As the valley deposits cooled, they emitted steam from fissures and fumaroles, earning the name "Valley of Ten Thousand Smokes."',
+    description: 'Text: This park includes as many as 18 individual volcanoes, seven of which have been active since 1900. The most significant volcanic event in history was the eruption of Mount Katmai and Novarupta in June 1912. Novarupta\'s eruption covered a nearby valley with ash. At the same time, the summit of Katmai collapsed into a caldera.',
     srcUrl: 'https://en.wikipedia.org/wiki/Katmai_National_Park_and_Preserve#Volcanoes',
     lat: 58.597529,
     lng: -154.693729,
   },
   {
     title: 'Denali National Park and Preserve',
-    description: 'The word "Denali" means "the high one" in the native Athabaskan language and refers to the mountain itself. The mountain was named after newly elected US president William McKinley in 1897 by local prospector William A. Dickey. The United States government formally adopted the name Mount McKinley after President Wilson signed the bill creating Mount McKinley National Park into effect in 1917, to the displeasure of locals.',
+    description: 'The word "Denali" means "the high one" in the native Athabaskan language and refers to the mountain itself. The mountain was named after newly elected US president William McKinley in 1897 by local prospector William A. Dickey.',
     srcUrl: 'https://en.wikipedia.org/wiki/Denali_National_Park_and_Preserve#Naming_controversy',
     lat: 63.1148,
     lng: -151.192606,
   },
   {
     title: 'Togiak National Wildlife Refuge',
-    description: 'The Togiak National Wildlife Refuge is dominated by the Ahklun Mountains in the north and the cold waters of Bristol Bay to the south. The natural forces that have shaped this land range from the violent and powerful to the geologically patient. Earthquakes and volcanoes filled the former role, and their marks can still be found, but it was the gradual advance and retreat of glacial ice that carved many of the physical features of this refuge.',
+    description: 'The Togiak National Wildlife Refuge is dominated by the Ahklun Mountains in the north and the cold waters of Bristol Bay to the south. The natural forces that have shaped this land range from the violent and powerful to the geologically patient.',
     srcUrl: 'https://en.wikipedia.org/wiki/Togiak_National_Wildlife_Refuge',
     lat: 59.221712,
     lng: -159.980149,
   },
   {
     title: 'Yukon Delta National Wildlife Refuge',
-    description: 'The refuge\'s coastal region bordering the Bering Sea is a rich, productive wildlife habitat supporting one of the largest concentrations of water fowl in the world. More than one million ducks and half a million geese use the area for breeding purposes each year.',
+    description: 'The refuge\'s coastal region bordering the Bering Sea is a rich, productive wildlife habitat supporting one of the largest concentrations of water fowl in the world.',
     srcUrl: 'https://en.wikipedia.org/wiki/Yukon_Delta_National_Wildlife_Refuge',
     lat: 61.368856,
     lng: -163.716136,
   },
   {
     title: 'Lake Clark National Park and Preserve',
-    description: 'Lake Clark preserves a wide variety of Alaskan landscapes and ecosystems, corresponding to its four main physiographic areas. The coastal sections running along the Cook Inlet from Tuxedni Bay to Chinitna Bay include coastline and marine ecosystems. The mountains of the Alaska, Aleutian and Chigmit Ranges with their glaciers form a second region. On either side of the mountains the valley, lake and foothill areas present a glacially altered landscape.',
+    description: 'Lake Clark preserves a wide variety of Alaskan landscapes and ecosystems, corresponding to its four main physiographic areas. The coastal sections running along the Cook Inlet from Tuxedni Bay to Chinitna Bay include coastline and marine ecosystems. The mountains of the Alaska, Aleutian and Chigmit Ranges with their glaciers form a second region.',
     srcUrl: 'https://en.wikipedia.org/wiki/Lake_Clark_National_Park_and_Preserve#Ecology',
     lat: 60.203294,
     lng: -154.319455,
@@ -90,7 +90,15 @@ window.markers = [
       });
 
       var that = this;
+      
+      google.maps.event.addListener(map, "click", function(event) {
+        that.closeInfoWindow(infowindow, markerInstances, defaultIcon);
+      });
 
+      $(document).on('keyup', function(e){
+        if (e.keyCode === 27) that.closeInfoWindow(infowindow, markerInstances, defaultIcon);
+      });
+      
       markerInstances.forEach(function(markerInstance) {
         markerInstance.addListener('click', function() {
           markerInstances.forEach(function(markerInst) {
@@ -113,6 +121,12 @@ window.markers = [
           );
           infowindow.open(map, markerInstance);
         });
+      });
+    },
+    closeInfoWindow: function(infowindow, markerInstances, defaultIcon) {
+      infowindow.close();
+      markerInstances.forEach(function(markerInst) {
+        markerInst.setIcon(defaultIcon);
       });
     },
     getMarker: function(title){
