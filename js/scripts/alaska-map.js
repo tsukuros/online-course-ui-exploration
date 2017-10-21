@@ -141,7 +141,7 @@ window.markers = [
         '<a target="_blank" style="color: #4c97ef; font-size: 14px;" href="'+marker.srcUrl+'"><span class="m-r-xs">Learn More</span><i class="fa fa-angle-right text-light"></i></a>'+
       '</div>';
     }
-  }
+  };
 
   window.HeroMap = HeroMap;
 

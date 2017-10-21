@@ -72,7 +72,7 @@
       var maxWidth = this.$scrollableArea.width();
       this.$miniMapContainer.css({ maxWidth: maxWidth });
     }
-  }
+  };
 
   window.StickyMap = StickyMap;
 
