@@ -141,7 +141,7 @@ window.markers = [
         '<a target="_blank" style="color: #4c97ef; font-size: 14px;" href="'+marker.srcUrl+'"><span class="m-r-xs">Learn More</span><i class="fa fa-angle-right text-light"></i></a>'+
       '</div>';
     }
-  }
+  };
 
   window.HeroMap = HeroMap;
 
@@ -175,7 +175,7 @@ window.markers = [
     this.trackScrollProgressByTop = true;
     this.reachedBottomOnce = false;
     this.TAB_KEY = 9;
-    
+
     this.init();
 
     this.$win
@@ -201,7 +201,7 @@ window.markers = [
         $('[href="'+o.relatedTarget+'"]')
           .addClass('read')
           .removeClass('text-bold');
-      })
+      });
     },
     onKeyUp: function(e) {
       if (e.keyCode !== this.TAB_KEY) return;
@@ -224,7 +224,7 @@ window.markers = [
         this.$subnav.removeClass('complete');
       }
       if (this.reachedBottomOnce) this.fillUpCurrentDiamond();
-      this.$scrollProgressBar.css({ height: scrolledPercent + '%' })
+      this.$scrollProgressBar.css({ height: scrolledPercent + '%' });
     },
     onResize: function(e) {
       var offset = this.$container.offset();
@@ -248,11 +248,11 @@ window.markers = [
       }.bind(this));
     },
     setReadSections: function(){
-      var currentSection = this.$el.find('.root-nav > .nav-link.active')
+      var currentSection = this.$el.find('.root-nav > .nav-link.active');
       this.readSections = localStorage.getItem('sections');
       if (!this.readSections) {
         this.readSections = [currentSection.data('section')];
-        localStorage.setItem('sections', JSON.stringify(this.readSections))
+        localStorage.setItem('sections', JSON.stringify(this.readSections));
       } else {
         this.readSections = JSON.parse(this.readSections);
         this.readSections.forEach(function(sectionId) {
@@ -268,10 +268,10 @@ window.markers = [
       var dataSection = currentActiveSection.data('section');
       if (this.readSections.indexOf(dataSection) == -1) {
         this.readSections.push(dataSection);
-        localStorage.setItem('sections', JSON.stringify(this.readSections))
+        localStorage.setItem('sections', JSON.stringify(this.readSections));
       }
     }
-  }
+  };
 
   window.SideNavScrollProgress = SideNavScrollProgress;
 
@@ -451,7 +451,7 @@ window.markers = [
       var maxWidth = this.$scrollableArea.width();
       this.$miniMapContainer.css({ maxWidth: maxWidth });
     }
-  }
+  };
 
   window.StickyMap = StickyMap;
 
