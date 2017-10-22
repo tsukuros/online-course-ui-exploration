@@ -59,9 +59,9 @@
         return '<div class="m-t-sm text-xs text-truncate"><img src="assets/images/part-3/bullseye.svg" class="img-fluid m-r-xs" style="color: #85beff; width: 24px;" /><span>'+marker.title+'</span></div>';
       }).join('');
     },
-    onScroll: function(e) {
+    onScroll: function() {
       if (this.$win.width() < 768) return;
-      var st = $(e.currentTarget).scrollTop();
+      var st = this.$win.scrollTop();
       if (st + this.headerHeight + 20 > this.miniMapOffset.top) {
         this.$miniMapContainer.addClass('in');
       } else {
@@ -71,6 +71,7 @@
     onResize: function(e) {
       var maxWidth = this.$scrollableArea.width();
       this.$miniMapContainer.css({ maxWidth: maxWidth });
+      this.onScroll();
     }
   };
 

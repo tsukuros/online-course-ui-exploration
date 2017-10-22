@@ -1,8 +1,13 @@
 .page-part-3 {
   .minimap-container {
-    &.in {
-      position: fixed;
-      top: 86px;
+    @include media-breakpoint-up(md){
+      opacity: 0;
+      transition: all 0.25s ease-in-out;
+      &.in {
+        opacity: 1;
+        position: fixed;
+        top: 86px;
+      }
     }
   }
 }
